@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCAT Study Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-container" id="loginScreen">
+        <div class="login-box">
+            <h1 class="login-title">MCAT Study Hub</h1>
+            <p class="login-subtitle">Access your study materials</p>
+            <div class="error-message" id="errorMessage">
+                Invalid username or password. Please try again.
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-input" id="usernameInput" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" id="passwordInput" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-button">Access Study Materials</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div class="app-container" id="appContainer">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">MCAT Study Hub</div>
+                <nav class="nav-tabs">
+                    <button class="nav-tab active" data-section="biochem">Biochemistry</button>
+                    <button class="nav-tab" data-section="anatomy">Anatomy & Physiology</button>
+                    <button class="nav-tab" data-section="dashboard">Dashboard</button>
+                </nav>
+                <button class="logout-button" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <main class="content">
+            <!-- Dashboard Section -->
+            <section class="section active" id="dashboard">
+                <h2 class="section-title">Your Study Dashboard</h2>
+                <p class="section-description">Track your progress and stay motivated!</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Total Videos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6h 30m</div>
+                        <div class="stat-label">Total Study Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="daysUntilMCAT">Loading...</div>
+                        <div class="stat-label">Days Until MCAT</div>
+                        <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">
+                            February 25, 2026
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Quick Access</h3>
+                <div class="video-grid">
+                    <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_1')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Recent: Protein Structure</h3>
+                            <p class="video-duration">Continue watching • 15:30 remaining</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Biochemistry Section -->
+            <section class="section" id="biochem">
+                <h2 class="section-title">Biochemistry</h2>
+                <p class="section-description">Attributed to Dr. Alexander Escobar</p>
+                
+                <div class="video-grid">
+                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_1')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">1. Amino Acids & Proteins</h3>
+                            <p class="video-duration">45 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_2')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">2. Enzyme Kinetics</h3>
+                            <p class="video-duration">38 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_3')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">3. Carbohydrate Metabolism</h3>
+                            <p class="video-duration">52 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_4')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">4. Lipid Metabolism</h3>
+                            <p class="video-duration">41 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_5')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">5. DNA Replication</h3>
+                            <p class="video-duration">35 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_6')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">6. Gene Expression</h3>
+                            <p class="video-duration">47 minutes</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Anatomy & Physiology Section -->
+            <section class="section" id="anatomy">
+                <h2 class="section-title">Anatomy & Physiology</h2>
+                <p class="section-description">Attributed to Dr. Patrick Cafferty</p>
+                
+                <div class="video-grid">
+                    <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_7')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">1. Cardiovascular System</h3>
+                            <p class="video-duration">55 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_8')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">2. Respiratory System</h3>
+                            <p class="video-duration">42 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_9')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">3. Nervous System</h3>
+                            <p class="video-duration">63 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_10')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">4. Endocrine System</h3>
+                            <p class="video-duration">48 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_11')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">5. Renal System</h3>
+                            <p class="video-duration">39 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_12')">
+                        <div class="video-thumbnail">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">6. Digestive System</h3>
+                            <p class="video-duration">44 minutes</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeVideo()">Close ✕</button>
+            <div class="video-container">
+                <iframe id="videoFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        Made by <a href="#" target="_blank">Aiden Golub</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
