@@ -35,9 +35,9 @@
             <div class="header-content">
                 <div class="logo">MCAT Study Hub</div>
                 <nav class="nav-tabs">
-                    <button class="nav-tab active" data-section="biochem">Biochemistry</button>
+                    <button class="nav-tab active" data-section="dashboard">Dashboard</button>
+                    <button class="nav-tab" data-section="biochem">Biochemistry</button>
                     <button class="nav-tab" data-section="anatomy">Anatomy & Physiology</button>
-                    <button class="nav-tab" data-section="dashboard">Dashboard</button>
                 </nav>
                 <button class="logout-button" onclick="logout()">Logout</button>
             </div>
@@ -47,34 +47,31 @@
             <!-- Dashboard Section -->
             <section class="section active" id="dashboard">
                 <h2 class="section-title">Your Study Dashboard</h2>
-                <p class="section-description">Track your progress and stay motivated for a 520+ score!</p>
+                <p class="section-description">Track your progress and stay motivated for a 522+ score!</p>
                 
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-number">112</div>
+                        <div class="stat-number">128</div>
                         <div class="stat-label">Total Videos</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">6h 30m</div>
-                        <div class="stat-label">Total Study Time</div>
+                        <div class="stat-number">29h 1m</div>
+                        <div class="stat-label">Total Study Content</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="daysUntilMCAT">Loading...</div>
+                    <div class="stat-card" id="countdownCard">
+                        <div class="stat-number" id="daysUntilMCAT">45</div>
                         <div class="stat-label">Days Until MCAT</div>
-                        <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">
-                            February 25, 2026
-                        </div>
                     </div>
                 </div>
 
                 <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Quick Access</h3>
                 <div class="video-grid">
-                    <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_1')">
+                    <div class="video-card" onclick="openVideo('')">
                         <div class="video-thumbnail">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
-                            <h3 class="video-title">Probs gonna put some tutorial here lol</h3>
+                            <h3 class="video-title">Work in progress...</h3>
                             <p class="video-duration">Continue watching • 00:00 remaining</p>
                         </div>
                     </div>
@@ -84,79 +81,866 @@
             <!-- Biochemistry Section -->
             <section class="section" id="biochem">
                 <h2 class="section-title">Biochemistry</h2>
-                <p class="section-description">Attributed to Dr. Alexander Escobar</p>
-                
+                <p class="section-description">Attributed to <a href="https://biology.emory.edu/people/bios/faculty/escobar-alexander.html" target="_blank">Dr. Alexander Escobar</a></p>
+                <div class="toc-container">
+                    <h3 class="toc-title">📚 Course Topics</h3>
+                    <div class="toc-topics">
+                        <!-- Water Topic Group -->
+                        <div class="topic-group" onclick="scrollToTopic('water-section')">
+                            <div class="topic-title">
+                                💧 Water
+                                <span class="topic-count">8 videos</span>
+                            </div>
+                        </div>
+
+                        <!-- Proteins Topic Group -->
+                        <div class="topic-group" onclick="scrollToTopic('energy-section')">
+                            <div class="topic-title">
+                                💡 Energy
+                                <span class="topic-count">4 videos</span>
+                            </div>
+                        </div>
+
+                        <!-- Add more topics as needed -->
+                        <div class="topic-group" onclick="scrollToTopic('proteinI-section')">
+                            <div class="topic-title">
+                                🥩 Protein Structure I
+                                <span class="topic-count">8 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('proteinII-section')">
+                            <div class="topic-title">
+                                🍗 Protein Structure II
+                                <span class="topic-count">5 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('ligand-section')">
+                            <div class="topic-title">
+                                🔩 Receptors & Ligands
+                                <span class="topic-count">4 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('enzyme-section')">
+                            <div class="topic-title">
+                                🏭 Enzymes & Kinetics
+                                <span class="topic-count">4 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('regulation-section')">
+                            <div class="topic-title">
+                                🛠 Enzyme Regulation
+                                <span class="topic-count">5 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('NA-section')">
+                            <div class="topic-title">
+                                🧬 Nucleic Acids
+                                <span class="topic-count">6 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('lipids-section')">
+                            <div class="topic-title">
+                                🧈 Lipids
+                                <span class="topic-count">5 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('carbo-section')">
+                            <div class="topic-title">
+                                🍞 Carbo
+                                <span class="topic-count">4 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('membrane-section')">
+                            <div class="topic-title">
+                                🚪 Membranes
+                                <span class="topic-count">5 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('biosignal-section')">
+                            <div class="topic-title">
+                                🔌 Biosignaling
+                                <span class="topic-count">3 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('hormonal-regulation-section')">
+                            <div class="topic-title">
+                                ⚖️ Hormonal Regulation
+                                <span class="topic-count">4 videos</span>
+                            </div>
+                        </div>
+
+                        <div class="topic-group" onclick="scrollToTopic('metabolism-section')">
+                            <div class="topic-title">
+                                🚲 Metabolism
+                                <span class="topic-count">7 videos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="video-grid">
-                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_1')">
-                        <div class="video-thumbnail">
+                    <div class="topic-divider" id="water-section">
+                        <h3>💧 Unit I: Water</h3>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/1422fa8c21a0b6814c09d66af0cea6ebee578cdc7db8ec334d8de0c2936e7d3ab8594184785482aa/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
-                            <h3 class="video-title">1. Amino Acids & Proteins</h3>
-                            <p class="video-duration">45 minutes</p>
+                            <h3 class="video-title">Lecure 1 Module 1</h3>
+                            <p class="video-duration">18.5 minutes</p>
                         </div>
                     </div>
                     
-                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_2')">
-                        <div class="video-thumbnail">
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/3c405d42a85c6ec503e3b77aa7fb1bbc72900a36476fb472b454b71cda40cbccf89828ef552b66e5/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
-                            <h3 class="video-title">2. Enzyme Kinetics</h3>
-                            <p class="video-duration">38 minutes</p>
+                            <h3 class="video-title">Lecture 1 Module 2</h3>
+                            <p class="video-duration">8 minutes</p>
                         </div>
                     </div>
                     
-                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_3')">
-                        <div class="video-thumbnail">
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/76730d07e51a3fb8c84054359c55738f6679a256f5686cd4bfbe9ad0e1678cc70fd17e0c5f6a4260/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
-                            <h3 class="video-title">3. Carbohydrate Metabolism</h3>
-                            <p class="video-duration">52 minutes</p>
+                            <h3 class="video-title">Lecture 1 Module 3</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/f5d33652860ad8f8120458943c1b82a1b886e32d69ec1b97f1a4721e84cd7dc49078a7b512f7dd6a/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 1 Module 4</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/a440a968db9053eec881472ab68b58f4d0a21fe734aad3678edbfc809b4dd4825f8cd167318deced/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 1 Module 5</h3>
+                            <p class="video-duration">10.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/fe40c133705cae385b1128e9f7e7c35494c6bff7b38c47402008a3e0eeeba7ebdb48a9587193c239/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 1 Module 6</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/b4ff3c927cee5bf6d6a4046d5f99ed981484cf4638166d212e752652771404ac79f787bb605644b2/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 1 Module 7</h3>
+                            <p class="video-duration">22 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/adb945d196a80818fd357fb697c5023af13e02c2faa4eb203bcf4e1ab5e97b22e2f8187e7c4de6d7/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 1 Module 8</h3>
+                            <p class="video-duration">13.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="energy-section">
+                        <h3>💡 Unit II: Energy</h3>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/c010294b378154d96085f3c34e5899cefaca17eeea27834efcb29d0fec5fc000cd4ad5e0acee411f/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1487875961445-47a00398c267?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 2 Module 1</h3>
+                            <p class="video-duration">17 minutes</p>
                         </div>
                     </div>
                     
-                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_4')">
-                        <div class="video-thumbnail">
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/354b35400ea08d748cdc21262faf7d2704d79857a6d3194111760d6e4d72ff745985e8100d283558/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1487875961445-47a00398c267?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
-                            <h3 class="video-title">4. Lipid Metabolism</h3>
-                            <p class="video-duration">41 minutes</p>
+                            <h3 class="video-title">Lecture 2 Module 2</h3>
+                            <p class="video-duration">11.5 minutes</p>
                         </div>
                     </div>
                     
-                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_5')">
-                        <div class="video-thumbnail">
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/00bec6d898f66ab427d391d8e93d6b3a0ac48ab3685f123e8cef6b8344c36ff73853a0be67c4f49f/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1487875961445-47a00398c267?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
-                            <h3 class="video-title">5. DNA Replication</h3>
-                            <p class="video-duration">35 minutes</p>
+                            <h3 class="video-title">Lecture 2 Module 3</h3>
+                            <p class="video-duration">19 minutes</p>
                         </div>
                     </div>
-                    
-                    <div class="video-card" onclick="openDirectVideo('YOUR_VIDEO_LINK_6')">
-                        <div class="video-thumbnail">
+
+                     <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/f6bc966b718f627b84d4b3a181fb4e129292966f68842261d4adb9a492920e816d2d95da1f2846c2/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1487875961445-47a00398c267?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
-                            <h3 class="video-title">6. Gene Expression</h3>
-                            <p class="video-duration">47 minutes</p>
+                            <h3 class="video-title">Lecture 2 Module 4</h3>
+                            <p class="video-duration">12 minutes</p>
                         </div>
                     </div>
+
+                    <div class="topic-divider" id="proteinI-section">
+                        <h3>🥩 Unit III: Protein Structure I</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/5a8d697807c644dba654c57e39b9992b3a1f5ff3454888a44dfdd7b9bba4e6e3dc31a1a96ad4f62d/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1638258581353-0ab658542e73?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 3 Module 1</h3>
+                            <p class="video-duration">15.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/c31e9abb3fc8a5387af9f19dc2c2e52194308dea6492dba416bb2819c0c471bfdb00efe68cfd1eb1/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1638258581353-0ab658542e73?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 3 Module 2</h3>
+                            <p class="video-duration">18 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/822e562361760e0263430c7b7985ed1eb0abbfc6c20e41cd7476719a1b9bd66a4ce1c5251a6271c6/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1638258581353-0ab658542e73?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 3 Module 3</h3>
+                            <p class="video-duration">13 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/e71f0bfb8d4c9350754f8e449a185f4fc729b9c77a881a6e4fd98635e52d1d627fa39739b0986ad4/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1638258581353-0ab658542e73?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 3 Module 4</h3>
+                            <p class="video-duration">7 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/15188f6a9be767df1a6d06fdfdeafde3c268330c88687eab278bc19333cec77a6aef8779747e70ad/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1638258581353-0ab658542e73?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 3 Module 5</h3>
+                            <p class="video-duration">8.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/5a230753de2f688cd6c29e3e10cc3254fdccf8e79d590e71ea79888fe5f81ffaaa01eaa8eaea1433/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1638258581353-0ab658542e73?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 3 Module 6</h3>
+                            <p class="video-duration">8 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/21280bf4f6f1d4c547b89e89e91d81a0dc32cc935dca5107819bd5e771550cc154b011874b71d758/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1638258581353-0ab658542e73?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 3 Module 7</h3>
+                            <p class="video-duration">15 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/84b08f96ec432c3311230a4012ff0396fd36469d77c1650abf860de856b95cf79a0b66c559e8ffd6/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1638258581353-0ab658542e73?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 3 Module 8</h3>
+                            <p class="video-duration">19 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="proteinII-section">
+                        <h3>🍗 Unit IV: Protein Structure II</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/a6ede5848c8dae67e0c47e7362b4210b5caa470c7e70adf579a74aeff5e12798520136034a8c67a1/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://plus.unsplash.com/premium_photo-1669922719627-02889711e1f7?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 4 Module 1</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/b1fc9dd4628c9c24e445e398e9edf199033866f6a487ef661550df48ca63d29c2f4098c0c2290bd5/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://plus.unsplash.com/premium_photo-1669922719627-02889711e1f7?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 4 Module 2</h3>
+                            <p class="video-duration">5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/3c45f817435e7c19fe9b2fff147dae2e68a8651575cb41923b71160f8f40f061350ab21d1baaf613/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://plus.unsplash.com/premium_photo-1669922719627-02889711e1f7?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 4 Module 3</h3>
+                            <p class="video-duration">7 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/6474a6a3-3cbb-468f-9b9f-b71d87b7bb81/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://plus.unsplash.com/premium_photo-1669922719627-02889711e1f7?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 4 Module 4</h3>
+                            <p class="video-duration">12.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/3c1c3efe81288b9ecb6e1dad6a6c1757aba8d64eb15fbfe3b488b8311a1f2cf479aa277bcc2bd443/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://plus.unsplash.com/premium_photo-1669922719627-02889711e1f7?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 4 Module 5</h3>
+                            <p class="video-duration">8.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="ligand-section">
+                        <h3>🔩 Unit V: Receptors & Ligands</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/4b2c404a40f240777d1791645d4ab660f3309d751ebcd535024d1232af7fe25edfabc5f308e9119a/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1714846428014-1597ff18619a?q=80&w=1929&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 5 Module 1</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/1c142b25e2c21e3c3f14eb50c56297bf46798e513d394d89c8d71f04604da19e0d6421e41f43941f/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1714846428014-1597ff18619a?q=80&w=1929&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 5 Module 2</h3>
+                            <p class="video-duration">14 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/b08999b2175fdc6fa90494f8486e1e179d5160e7fd1a49bfac0a9432ef3ff6acec51811d6499386e/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1714846428014-1597ff18619a?q=80&w=1929&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 5 Module 3</h3>
+                            <p class="video-duration">15 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/bd86bd1d70874e9a07321c6fa10719e0001c1b514305fc0daea8ffef5ea0b8b14ba915a9b88f1724/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1714846428014-1597ff18619a?q=80&w=1929&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 5 Module 4</h3>
+                            <p class="video-duration">12.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="enzyme-section">
+                        <h3>🏭 Unit VI: Enzymes & Kinetics</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/75d81f4c3d6959ff5a9694f2b7ade03b8a277eaf790ca7cd342f2700fe7f535adf13143b4c0769fb/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://plus.unsplash.com/premium_photo-1669301638284-ed33553ef8fa?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 6 Module 1</h3>
+                            <p class="video-duration">13 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/81c10953911d862d85338b0284f42d4eff427474b5e908b9078f056c5e9bad9005ab48db768aa809/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://plus.unsplash.com/premium_photo-1669301638284-ed33553ef8fa?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 6 Module 2</h3>
+                            <p class="video-duration">6 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/2fe285fd295919916b64b59906d59f1ea5789e9e0d7f267d63d3f089867e606128e15d7101749d07/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://plus.unsplash.com/premium_photo-1669301638284-ed33553ef8fa?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 6 Module 3</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/31223b49018dc22fd4b179757e3b9db53bbb250359baea55a5df0139bc614f3d7b95cc90f928a011/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://plus.unsplash.com/premium_photo-1669301638284-ed33553ef8fa?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 6 Module 4</h3>
+                            <p class="video-duration">5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="regulation-section">
+                        <h3>🏭 Unit VII: Enzyme Regulation</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/135fbce5db1c03d72e0a33aa4cbef1a5a0ff02c929abcd5310396611978f47af980bdfedd25fd10e/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 7 Module 1</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/c04a3ff386d532b9ff08751e6f33191709c6838d578f8b50e800481320143fc14db6dd2c90dd9df4/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 7 Module 2</h3>
+                            <p class="video-duration">5.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/447ea89fe14e27a49f43eb3ee7918a8686f133410686457a39520f2b1ea7f7f7c13894344a6701ec/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 7 Module 3</h3>
+                            <p class="video-duration">6.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/7e420a83f49ec3626326f134060ba023446e20c90cce5e0e3836300fc763ff56fea8b25a5a44f565/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 7 Module 4</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/96a17b62710261b0359d45c7c0ed981f36443ea872856aa6278b18388ef630e4536e31379d48a203/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 7 Module 5</h3>
+                            <p class="video-duration">15.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="NA-section">
+                        <h3>🧬 Unit VIII: Nucleic Acids and Mechanisms</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/9afea8cd849004873c8e635ab786f352abd7f4c5bb11da49620c53af681190b203c35eb81835104c/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1681911046068-79bd605f8663?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 8 Module 1</h3>
+                            <p class="video-duration">18 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/a3b7b5612fe2d93a1e1ecfa6c87945cfaab122b15bcf4674842e9c2696a1a3b0dd4f67c2de4d147f/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1681911046068-79bd605f8663?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 8 Module 2</h3>
+                            <p class="video-duration">18 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/91c121cbec5daaf02c3c3845ec991ba89f8f8d9d687ef6b44107800fe7e22840c5286bc96ed6ee8d/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1681911046068-79bd605f8663?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 8 Module 3</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/017a29fab4700ea80aa96dc0b19965b807784f7bd2a6d2a0c0bec315064cb5774609250622abb435/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1681911046068-79bd605f8663?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 8 Module 4</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/dc15555b97877442a9ca8d5aecaa5958d9bd7a98611340df73ba0a55c071d26cc8f7e82ed36d854e/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1681911046068-79bd605f8663?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 8 Module 5</h3>
+                            <p class="video-duration">4 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/528f8dfb275927ea3ef2e27f078e55a7b9471f421b7b68d4f068006d4a440bb0e5c2a81ee4e44a1f/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1681911046068-79bd605f8663?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 8 Module 6</h3>
+                            <p class="video-duration">18.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="lipids-section">
+                        <h3>🧈 Unit IX: Lipids</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/43909f493c564462d154fa1f51fbaa425e8e09124f4b90c8f79e372aaae4db4354f897238a0abb2c/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1616485828923-2640a1ee48b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 9 Module 1</h3>
+                            <p class="video-duration">16 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/f925f53a37974f419339758abe0abe69758e3c2f33961595c3736027df26a0745fe24ec8caf97ea6/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1616485828923-2640a1ee48b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 9 Module 2</h3>
+                            <p class="video-duration">14 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/9db6e3ec6f1ab384c72abf20d1146d47b81897de92628bb3abad4e9663a23cabef5425f677b36da6/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1616485828923-2640a1ee48b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 9 Module 3</h3>
+                            <p class="video-duration">15 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/950a2cc0acf3c04898ed0eb827a8c6ef079f037f5110d49f7d45f31262d836a0dc686e90831bde04/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1616485828923-2640a1ee48b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 9 Module 4</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/1e45e536d857a6b614db45705990696857fc601df470709b10efaa62fc3234ed4f484dc1d92cfee9/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1616485828923-2640a1ee48b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 9 Module 5</h3>
+                            <p class="video-duration">8 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="carbo-section">
+                        <h3>🍞 Mini Lecture: Carbohydrates</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/3dadbc13d1c1aaa19afe1c863f0a28e81a42d28faee62539bd4e28eda4b14df234837f0586b70b79/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1554933054-0b679a7982ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">MiniLec Module 1</h3>
+                            <p class="video-duration">9.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/7b426db6c58c881a8746148714ef46bad40f28c2d0f66f4657dfc0597eb7bc5a1b93fc10d2cf98e6/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1554933054-0b679a7982ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">MiniLec Module 2</h3>
+                            <p class="video-duration">8 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/ad8a86963c46f8985a351d3c390ae9d54e612b100435172f90a1ecbdc73ce650a2eb03aef57ad677/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1554933054-0b679a7982ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">MiniLec Module 3</h3>
+                            <p class="video-duration">16.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/310370dbe1c879a292bc28dcd3553e134a776d881b546e743b352d05115253ebef0d0cc99c2f341b/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1554933054-0b679a7982ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">MiniLec Module 4</h3>
+                            <p class="video-duration">8.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="membrane-section">
+                        <h3>🚪 Unit X: Membranes and Transport</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/161daae409c7ded0b8a2ce14b9d5ff57db2d4bf87258d887d67d6a9cd188cce6bb6ec3bcd16f5d87/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1562105028-8ef4ac0d2327?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 10 Module 1</h3>
+                            <p class="video-duration">11.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/13f60781f31c98e315cc93b79e200f7f3a49be56df24ccdc4a4b3504b4a56054a0134f2cb9b4ccf8/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1562105028-8ef4ac0d2327?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 10 Module 2</h3>
+                            <p class="video-duration">21 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/097f5c4dab0350197064565405a0aa8f16f003f62e609b9c00f2ef6c88baf7ae7f2e1e4725950cb2/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1562105028-8ef4ac0d2327?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 10 Module 3</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/d9570485a12ea62ef8a15502b62b268327df9f32cf094bb43669678dd2c394814b0e841ccd90eebf/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1562105028-8ef4ac0d2327?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 10 Module 4</h3>
+                            <p class="video-duration">14 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/06f65593a0818cd26710df82179669ea3e88ab2d651fdf8210755b1f145f70d71c3e357a4b30169e/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1562105028-8ef4ac0d2327?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 10 Module 5</h3>
+                            <p class="video-duration">11 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="biosignal-section">
+                        <h3>🔌 Unit XI: Biosignaling</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/2377b3744239f6994f0ba93b9be506c304e55090ca058c68e46b467596253900044c82463d1401b3/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1499618113933-3b9fe2db9282?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 11 Module 1</h3>
+                            <p class="video-duration">9.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/f1b2d51016d983860c3f834d5f952ecde968ce398bab6985f315477a3d19f022b616d542ab2ec25c/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1499618113933-3b9fe2db9282?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 11 Module 2</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/faff7aa8035e16b2a09b256378f89ce80501c944b186e2d2d43d04ebe978590276feea62da866c5d/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1499618113933-3b9fe2db9282?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 11 Module 3</h3>
+                            <p class="video-duration">7.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="hormonal-regulation-section">
+                        <h3>⚖️ Unit XII: Hormonal Regulation & Metabolism</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/11cf4dacbc1325a379fe3d07f5bede45daac0a2c0fa440102a831969a46b994597f679ab3194abbc/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1565366304783-88a1d75fcd93?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 12 Module</h3>
+                            <p class="video-duration">6.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/8ee6610d6fc0d0ac270557867c70889ea464119b2f7dc9dd59d1764ccd3f035b4c5e45623db8d006/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1565366304783-88a1d75fcd93?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 12 Module</h3>
+                            <p class="video-duration">11 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/55d894857243826bdb4d0ed3b32f35fb6622e7b228a0881b1accdc86085b1454418faff4544207dd/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1565366304783-88a1d75fcd93?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 12 Module</h3>
+                            <p class="video-duration">12.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/c5b079ceb8ba77abdd764a6adabc3ed2acdcb504d82c694095395db8eee0d21badea0702e0c24b12/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1565366304783-88a1d75fcd93?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 12 Module</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="topic-divider" id="metabolism-section">
+                        <h3>🚲 Unit XIII: Metabolism</h3>
+                    </div>
+
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/9ccdf0977beaa7047211213e33b7d0e94eb83b265bdd2971aec551265ecc94b00b938541d05006f2/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 13 Module 1</h3>
+                            <p class="video-duration">12.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/8bb05e904f686439775041984c47c62126cf2c915f683f259606ecaf4bfac96ed48aea9623267879/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 13 Module 2</h3>
+                            <p class="video-duration">14.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/6f6db36f92d989dfec73a2965e3aabd6f2db78df5f7fbfe3321961cc890d76cb87ef38bbe5e203fa/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 13 Module 3</h3>
+                            <p class="video-duration">10.5 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/982c5b7bdb174e2ac4f2c104bcf66885168b256adb39ab9b659390408a25b3b13d7dd190e100a615/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 13 Module 4</h3>
+                            <p class="video-duration">8 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/204c944e5897f80030599bdda3ef9cbf809f2b027c89cd6624e92e84ea1e17e6240deb955985dd47/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 13 Module 5</h3>
+                            <p class="video-duration">13 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/a99ae0fea7c713e430d0b3301358edebcfa73d194802dbeecbf020582daa0874de338efbaff4d549/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 13 Module 6</h3>
+                            <p class="video-duration">6 minutes</p>
+                        </div>
+                    </div>
+                    <div class="video-card" onclick="openDirectVideo('https://echo360.org/media/384733ffadafe7d47a3bd2c74c49850cc5d73caaea76759b5509fecafc1848b17bb9f9e9c3b6be3b/public')">
+                        <div class="video-thumbnail"  style="background-image: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture 13 Module 7</h3>
+                            <p class="video-duration">14 minutes</p>
+                        </div>
+                    </div>
+
+                    <!-- ADD MORE VIDEOS HERE - Just copy this block and update the info -->
+                    <!--
+                    <div class="video-card" onclick="openDirectVideo('')">
+                        <div class="video-thumbnail"  style="background-image: url('');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Lecture Module</h3>
+                            <p class="video-duration"> minutes</p>
+                        </div>
+                    </div>
+                    -->
                 </div>
             </section>
 
             <!-- Anatomy & Physiology Section -->
             <section class="section" id="anatomy">
                 <h2 class="section-title">Anatomy & Physiology</h2>
-                <p class="section-description">Attributed to Dr. Patrick Cafferty</p>
+                <p class="section-description">Attributed to <a href="https://biology.emory.edu/people/bios/faculty/cafferty-patrick.html" target="_blank">Dr. Patrick Cafferty</a></p>
                 
                 <div class="video-grid">
                     <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_7')">
-                        <div class="video-thumbnail">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/ID/hqdefault.jpg');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
@@ -166,7 +950,7 @@
                     </div>
                     
                     <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_8')">
-                        <div class="video-thumbnail">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/ID/hqdefault.jpg');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
@@ -176,7 +960,7 @@
                     </div>
                     
                     <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_9')">
-                        <div class="video-thumbnail">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/ID/hqdefault.jpg');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
@@ -186,7 +970,7 @@
                     </div>
                     
                     <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_10')">
-                        <div class="video-thumbnail">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/ID/hqdefault.jpg');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
@@ -196,7 +980,7 @@
                     </div>
                     
                     <div class="video-card" onclick="openVideo('YOUR_VIDEO_ID_11')">
-                        <div class="video-thumbnail">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/ID/hqdefault.jpg');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
@@ -204,14 +988,514 @@
                             <p class="video-duration">39 minutes</p>
                         </div>
                     </div>
-
+                    
                     <div class="video-card" onclick="openVideo('ODwDrU4oC3g')">
-                        <div class="video-thumbnail">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/ODwDrU4oC3g/hqdefault.jpg');">
                             <div class="play-icon"></div>
                         </div>
                         <div class="video-info">
                             <h3 class="video-title">6. Cell Signalling III</h3>
-                            <p class="video-duration">44 minutes</p>
+                            <p class="video-duration">10 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('q4xxf74PtHc')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/q4xxf74PtHc/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">7. Cell signaling IV</h3>
+                            <p class="video-duration">10 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('ExyBFZ6dKYs')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/ExyBFZ6dKYs/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">8. Cell signaling V</h3>
+                            <p class="video-duration">11 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('r09gkIIvKEc')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/r09gkIIvKEc/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">9. Endocrinology I Overview</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('tKdfZajB4m0')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/tKdfZajB4m0/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">10. Endocrinology II Classes of endocrine hormones</h3>
+                            <p class="video-duration">11 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('obvNO35ynDI')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/obvNO35ynDI/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">11. Endocrinology III Protein and Peptide hormones</h3>
+                            <p class="video-duration">9.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('QMJTmiVqQow_14')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/QMJTmiVqQow/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">12. Endocrinology IV Steroid hormones</h3>
+                            <p class="video-duration">11 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('YLfd5BC8V2g')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/YLfd5BC8V2g/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">13. Endocrinology V Hypothalamus and Posterior Pituitary</h3>
+                            <p class="video-duration">10.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('8aojnfU7xIE')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/8aojnfU7xIE/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">14. Endocrinology VI Anterior pituitary gland</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('bk3E_KN3iLo')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/bk3E_KN3iLo/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">15. Neurobiology I CNS PNS and neurons</h3>
+                            <p class="video-duration">10.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('xOUsNNLq1vc')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/xOUsNNLq1vc/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">16. Neurobiology II Glial cells I</h3>
+                            <p class="video-duration">13 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('92s9tjnPkz0')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/92s9tjnPkz0/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">17. Neurobiology III Meninges and CSF I</h3>
+                            <p class="video-duration">13 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('dSds6L4oOZ0')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/dSds6L4oOZ0/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">18. Neurobiology IV Blood brain barrier</h3>
+                            <p class="video-duration">10 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('QCMMxwUaDfo')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/QCMMxwUaDfo/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">19. Neurobiology V Overview of the brain</h3>
+                            <p class="video-duration">16.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('YB74XH_zB00')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/YB74XH_zB00/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">20. Neurobiology VI Organization of the spinal cord</h3>
+                            <p class="video-duration">10 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('abSS_givxw0')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/abSS_givxw0/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">21. Neurobiology VII Efferent PNS pathways</h3>
+                            <p class="video-duration">14 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('InK_2Gec0PY')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/InK_2Gec0PY/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">22. Neurobiology VIII Neurotransmitters and receptors of the PNS</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('T8VqP_AIk_o')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/T8VqP_AIk_o/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">23. Neurobiology IX Basic Principles of Electricity</h3>
+                            <p class="video-duration">14 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('ja665g14aNo')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/ja665g14aNo/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">24. Neurobiology X Membrane potential</h3>
+                            <p class="video-duration">16 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Q-SNpybzZ3k')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Q-SNpybzZ3k/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">25. Neurobiology XI Graded potentials</h3>
+                            <p class="video-duration">8 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('utRYpgZpn5c')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/utRYpgZpn5c/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">26. Neurobiology XII Action potentials</h3>
+                            <p class="video-duration">15 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('cFPN8BX52gI')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/cFPN8BX52gI/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">27. Neurobiology XIII Action potential propagation</h3>
+                            <p class="video-duration">8 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Lb2UJdCt8Qs')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Lb2UJdCt8Qs/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">28. Neurobiology XIV Synapses</h3>
+                            <p class="video-duration">13.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('O4-PNb8b77k')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/O4-PNb8b77k/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">29. Muscle physiology I Organization of skeletal muscle</h3>
+                            <p class="video-duration">10 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('duYzpZf28XA')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/duYzpZf28XA/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">30. Muscle physiology II Sarcomere</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Bb9d4Qtvt40')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Bb9d4Qtvt40/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">31. Muscle physiology II Excitation contraction coupling</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('k8Fa9QNzH6c')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/k8Fa9QNzH6c/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">32. Muscle physiology IV Motor units and NMJs</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('QdFxjMEwm5s')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/QdFxjMEwm5s/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">33. Cardiovascular physiology I Organization & anatomy</h3>
+                            <p class="video-duration">15 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('qmyd24834Rw')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/qmyd24834Rw/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">34. Cardiovascular physiology II Heart structure</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('DqFhHJlvhjo')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/DqFhHJlvhjo/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">35. Cardiovascular physiology III Heartbeat coordination</h3>
+                            <p class="video-duration">11 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('MWa7iREPkUQ')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/MWa7iREPkUQ/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">36. Cardiovascular physiology IV ECG</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('7WAT6EoSCEM')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/7WAT6EoSCEM/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">37. Cardiovascular physiology V Cardiac mechanics</h3>
+                            <p class="video-duration">17 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('SPFg3VoY02o')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/SPFg3VoY02o/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">38. Cardiovascular physiology VI Heart Sounds</h3>
+                            <p class="video-duration">7 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('GunRUzaMn74')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/GunRUzaMn74/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">39. Cardiovascular physiology VII Blood pressure</h3>
+                            <p class="video-duration">17 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('7Lf120DPEgY')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/7Lf120DPEgY/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">40. Cardiac physiology VIII Cardiac Output</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('-g_xwk2dr30')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/-g_xwk2dr30/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">41. Cardiac physiology IX Baroreceptor reflex</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('hw9gHByZ_fg')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/hw9gHByZ_fg/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">42. Respiratory physiology I Pulmonary system organization</h3>
+                            <p class="video-duration">10 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('StU69a-1N24')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/StU69a-1N24/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">43. Respiratory physiology II Mechanics of breathing</h3>
+                            <p class="video-duration">17.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('NhsO3-R4MoM')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/NhsO3-R4MoM/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">44. Respiratory physiology III Factors affecting pulmonary ventilation</h3>
+                            <p class="video-duration">13 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Euj92W-LR5k')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Euj92W-LR5k/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">45. Respiratory physiology IV Lung volumes and capacities</h3>
+                            <p class="video-duration">8.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('pEeOQrN_ikk')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/pEeOQrN_ikk/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">46. Respiratory physiology V Partial pressure of gases</h3>
+                            <p class="video-duration">9 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('oF95Opu_QpQ')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/oF95Opu_QpQ/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">47. Respiratory physiology VI O2 Transport</h3>
+                            <p class="video-duration">17 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Tza2ocJazgc')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Tza2ocJazgc/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">48. Respiratory physiology VII CO2 transport</h3>
+                            <p class="video-duration">8 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Hy2tAeNc0Jw')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Hy2tAeNc0Jw/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">49. Respiratory physiology VIII Control of respiration</h3>
+                            <p class="video-duration">15 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('JSGPhsJe-0M')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/JSGPhsJe-0M/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">50. Renal physiology I Renal functions</h3>
+                            <p class="video-duration">8 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('MSLkQHkXFIc')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/MSLkQHkXFIc/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">51. Renal physiology II Organization of the urinary system</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Y_WLmhLw5Pk')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Y_WLmhLw5Pk/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">52. Renal physiology III Basic renal processes</h3>
+                            <p class="video-duration">16.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Y60Puj_AC1k')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Y60Puj_AC1k/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">53. Renal physiology IV Basic renal processes for sodium and water</h3>
+                            <p class="video-duration">6.5 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('xlEq4i2tTDQ')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/xlEq4i2tTDQ/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">54. Renal physiology VI Loop of Henle Countercurrent multiplier</h3>
+                            <p class="video-duration">12 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Vte7C3PcqSw')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Vte7C3PcqSw/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">55. Renal physiology VI Control of sodium reabsorption</h3>
+                            <p class="video-duration">15 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" onclick="openVideo('Wwoma8ezwHM')">
+                        <div class="video-thumbnail"  style="background-image: url('https://i.ytimg.com/vi/Wwoma8ezwHM/hqdefault.jpg');">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">56. Renal physiology VII Micturition reflex</h3>
+                            <p class="video-duration">7 minutes</p>
                         </div>
                     </div>
                 </div>
@@ -233,6 +1517,7 @@
     <footer class="footer">
         Made by <a href="#" target="_blank">Aiden Golub</a>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
